@@ -1,19 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo</title>
+    <title>Carrito de Compras de Manga</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script src="compras.js"></script>
+    <ul class="nav">
+        <li class="item_1"><a href="eventos.html">Eventos</a></li>
+        <li class="item_2"><a href="index.html">INICIO</a></li>
+    </ul>
+    <h1>Carrito de Compras de Manga</h1>
 
-    <main>
-        <section id="catalogo">
-        <p>MI Catalogo</p>
-        <a href="mi_pagina.html">Menu</a>
-        </select>
+    <!-- Sección de productos -->
+    <div id="productos">
+        <div class="categoria">
+            <h2>Kodomo</h2>
+            <img src="/imagenes/doraemon.jpeg" width="300" height="340" alt="MANGAS Kodomo">
+            <div class="manga">
+                <p><strong>Título:</strong> Doraemon</p>
+                <p><strong>Autor:</strong> Fujiko F. Fujio</p>
+                <p><strong>Año de Publicación:</strong> 1969</p>
+                <p><strong>Precio:</strong> $800</p>
+                <button onclick="agregarAlCarrito('Doraemon', 800)">Agregar al Carrito</button>
+            </div>
+        </div>
 
-    </main>
-</body>
-</html>
+        <div class="categoria">
+            <h2>Shōnen</h2>
+            <img src="/imagenes/ONPIECE_1.jpg" width="300" height="340" alt="MANGAS Shōnen">
+            <div class="manga">
+                <p><strong>Título:</strong> One Piece</p>
+                <p><strong>Autor:</strong> Eiichiro Oda</p>
+                <p><strong>Año de Publicación:</strong> 1997</p>
+                <p><strong>Precio:</strong> $1000</p>
+                <button onclick="agregarAlCarrito('One Piece', 1000)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h2>Shōjo</h2>
+            <img src="/imagenes/fruitsbasket_01.jpg" width="300" height="340" alt="MANGAS Shōjo">
+            <div class="manga">
+                <p><strong>Título:</strong> Fruits Basket</p>
+                <p><strong>Autor:</strong> Natsuki Takaya</p>
+                <p><strong>Año de Publicación:</strong> 1998</p>
+                <p><strong>Precio:</strong> $800</p>
+                <button onclick="agregarAlCarrito('Fruits Basket', 800)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h2>Seinen</h2>
+            <img src="/imagenes/Berserk.jpg" width="300" height="340" alt="MANGAS Seinen">
+            <div class="manga">
+                <p><strong>Título:</strong> Berserk</p>
+                <p><strong>Autor:</strong> Kentaro Miura</p>
+                <p><strong>Año de Publicación:</strong> 1989</p>
+                <p><strong>Precio:</strong> $1200</p>
+                <button onclick="agregarAlCarrito('Berserk', 1200)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h2>Josei</h2>
+            <img src="/imagenes/nana_01.jpg" width="300" height="340" alt="MANGAS Josei">
+            <div class="manga">
+                <p><strong>Título:</strong> Nana</p>
+                <p><strong>Autor:</strong> Ai Yazawa</p>
+                <p><strong>Año de Publicación:</strong> 2000</p>
+                <p><strong>Precio:</strong> $900</p>
+                <button onclick="agregarAlCarrito('Nana', 900)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- Agrega más mangas según sea necesario -->
+
+        <!-- Ejemplo adicional -->
+        <!--
+        ...
+        -->
+
+    </div>
+
+    <!-- Sección del carrito -->
+    <h2>Tu Carrito</h2>
+    <div id="carrito"></div>
+    <!-- Total -->
+    Total: $<span id="total">0</span>
+
+    <!-- Script para manejar el carrito -->
+    <!-- Asegúrate que este script esté después del contenido HTML -->
+    <!-- Puedes incluirlo aquí o en un archivo separado como compras.js -->
+
+<script src='compras.js'></script>
+
+<!-- Fin del cuerpo del documento -->
+
+<script>
+// Aquí va el código JavaScript para manejar el carrito
+let carrito = [];
+let total = 0;
+
+function agregarAlCarrito(titulo, precio) {
+    // Agregar producto al carrito
+    const producto = { titulo, precio };
+    carrito.push(producto);
+
+    // Actualizar total
+    total += precio;
+
+    // Mostrar carrito actualizado
+    mostrarCarrito();
+}
+
+function mostrarCarrito() {
+    const carritoDiv = document.getElementById('carrito');
+    carritoDiv.innerHTML = ''; // Limpiar contenido previo
+
+    // Mostrar cada producto en el carrito
+    carrito.forEach((producto, index) => {
+        const divProducto = document.createElement('div');
+        divProducto.innerHTML = `
+            ${producto.titulo} - $${producto.precio} 
+            (<button onclick='eliminarDelCarrito(${index})'>Eliminar</button>)`;
+        carritoDiv.appendChild(divProducto);
+    });
+
+    // Actualizar total en la interfaz
+    document.getElementById('total').innerText = total;
+}
+
+function eliminarDelCarrito(index) {
+   // Restar el precio del producto eliminado del total
+   total -= carrito[index].precio;
+
+   // Eliminar producto del carrito
+   carrito.splice(index, 1);
+
+   // Mostrar carrito actualizado
+   mostrarCarrito();
+}
+
+// Fin del script JavaScript
+// Asegúrate que este script esté después del contenido HTML
+
+// Fin del cuerpo del documento
+
+// Cierre del documento HTML

@@ -155,3 +155,268 @@ border-radius: 10px;
 background-color: #ffffff;
 
 }
+
+/* Estilo para el título principal */
+h1 {
+    text-align: center;
+    color: #FF69B4; 
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    font-size: 3em; /
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5), 
+                 4px 4px 0 rgba(255, 255, 255, 0.7); 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+/* Efecto de animación en el título */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+h1:hover {
+    animation: bounce 0.5s; /* Efecto de rebote al pasar el mouse */
+}
+
+/*catalogo*/
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para la navegación */
+.nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.nav li {
+    float: left;
+    list-style-type: none;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: #575757;
+}
+
+/* Estilo para el título principal */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para las categorías */
+.categoria {
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px; /* Limitar el ancho máximo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los títulos de las categorías */
+.categoria h2 {
+    color: #007BFF; 
+}
+
+/* Estilo para los detalles del manga */
+.manga p {
+    margin: 5px 0; 
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: #218838; 
+}
+
+/*estilo para los productos seleccionados*/
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.categoria {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.categoria:hover {
+    transform: scale(1.02);
+}
+
+.manga {
+    margin-top: 10px;
+}
+
+.manga p {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; /* Verde más oscuro */
+}
+
+#carrito {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+#carrito div {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+#carrito button {
+   background-color: #dc3545; /* Rojo */
+   padding: 5px; 
+   font-size: smaller; 
+   border-radius: 3px; 
+   border:none; 
+   cursor:pointer; 
+}
+
+#carrito button:hover {
+   background-color:#c82333; /* Rojo más oscuro */
+}
+
+/* Estilo para el total */
+h3 {
+   font-weight:bold; 
+   color:#333; 
+}
+
+/*inicio de sesion*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'ex Neue', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+header {
+    width: 100%;
+}
+
+.contenedor {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px; /* Ancho máximo del contenedor */
+    text-align: center; /* Centrar texto */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column; /* Colocar elementos en columna */
+}
+
+.username input {
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio entre campos */
+}
+
+.username input::placeholder {
+    color: #aaa; /* Color del texto del placeholder */
+}
+
+.recordar {
+    margin-bottom: 15px; /* Espacio debajo del texto "olvido su contraseña?" */
+}
+
+.boton a {
+    display: inline-block; /* Para que el enlace se comporte como un botón */
+    background-color: #007BFF; /* Color azul */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    text-decoration: none; /* Sin subrayado en el enlace */
+}
+
+.boton a:hover {
+   background-color:#0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.registrarse {
+   margin-top: 15px; /* Espacio encima del texto "quiero hacer el registro" */
+   font-size: smaller; 
+   color:#555; 
+}
