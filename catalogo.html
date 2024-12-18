@@ -14,8 +14,8 @@
     </ul>
     <h1>Carrito de Compras de Manga</h1>
 
-    <!-- Sección de productos -->
-    <div id="productos">
+   
+        <div id="productos">
         <div class="categoria">
             <h2>Kodomo</h2>
             <img src="/imagenes/doraemon.jpeg" width="300" height="340" alt="MANGAS Kodomo">
@@ -76,51 +76,43 @@
             </div>
         </div>
 
-        <!-- Agrega más mangas según sea necesario -->
-
-        <!-- Ejemplo adicional -->
-        <!--
-        ...
-        -->
+    
 
     </div>
 
-    <!-- Sección del carrito -->
+   
     <h2>Tu Carrito</h2>
     <div id="carrito"></div>
     <!-- Total -->
     Total: $<span id="total">0</span>
 
-    <!-- Script para manejar el carrito -->
-    <!-- Asegúrate que este script esté después del contenido HTML -->
-    <!-- Puedes incluirlo aquí o en un archivo separado como compras.js -->
+    
 
 <script src='compras.js'></script>
 
-<!-- Fin del cuerpo del documento -->
 
 <script>
-// Aquí va el código JavaScript para manejar el carrito
+
 let carrito = [];
 let total = 0;
 
 function agregarAlCarrito(titulo, precio) {
-    // Agregar producto al carrito
+
+
     const producto = { titulo, precio };
     carrito.push(producto);
 
-    // Actualizar total
+    
     total += precio;
 
-    // Mostrar carrito actualizado
+   
     mostrarCarrito();
 }
 
 function mostrarCarrito() {
     const carritoDiv = document.getElementById('carrito');
-    carritoDiv.innerHTML = ''; // Limpiar contenido previo
+    carritoDiv.innerHTML = '';
 
-    // Mostrar cada producto en el carrito
     carrito.forEach((producto, index) => {
         const divProducto = document.createElement('div');
         divProducto.innerHTML = `
@@ -129,24 +121,18 @@ function mostrarCarrito() {
         carritoDiv.appendChild(divProducto);
     });
 
-    // Actualizar total en la interfaz
+    
     document.getElementById('total').innerText = total;
 }
 
 function eliminarDelCarrito(index) {
-   // Restar el precio del producto eliminado del total
+   
    total -= carrito[index].precio;
 
-   // Eliminar producto del carrito
+  
    carrito.splice(index, 1);
 
-   // Mostrar carrito actualizado
+   
    mostrarCarrito();
 }
 
-// Fin del script JavaScript
-// Asegúrate que este script esté después del contenido HTML
-
-// Fin del cuerpo del documento
-
-// Cierre del documento HTML
